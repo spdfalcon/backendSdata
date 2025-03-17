@@ -36,6 +36,10 @@ const limiter = rateLimit({
 app.use(limiter);
 
 // Health check endpoint for Vercel
+app.get('/', (req, res) => {
+  res.status(200).json({ status: 'API is running' });
+});
+
 app.get('/health', (req, res) => {
   res.status(200).json({ status: 'ok' });
 });
@@ -48,7 +52,6 @@ mongoose.connect(MONGODB_URI)
   })
   .catch((error) => {
     console.error('MongoDB connection error:', error);
-    process.exit(1);
   });
 
 // Routes
@@ -62,11 +65,12 @@ app.use(errorHandler);
 // Start server
 const PORT = parseInt(process.env.PORT || '3000', 10);
 
-// For Vercel, we don't need to explicitly call listen()
+// For local development
 if (process.env.NODE_ENV !== 'production') {
   app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running on port ${PORT}`);
   });
 }
 
+// Export for Vercel
 export default app; 
