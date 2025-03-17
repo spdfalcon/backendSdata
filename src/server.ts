@@ -21,7 +21,7 @@ app.set('trust proxy', 1);
 // Set up middleware
 app.use(helmet());
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:19006', 'exp://192.168.1.5:8081'],
+  origin: '*',  // Allow all origins in development
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
