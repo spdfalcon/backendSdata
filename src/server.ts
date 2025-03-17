@@ -13,7 +13,7 @@ import messageRoutes from './routes/messageRoutes';
 dotenv.config();
 
 // Create Express app
-const app = express();
+const app = express(); 
 
 // Enable trust proxy for Vercel
 app.set('trust proxy', 1);
