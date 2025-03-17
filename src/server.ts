@@ -15,7 +15,7 @@ dotenv.config();
 // Create Express app
 const app = express();
 
-// Enable trust proxy (required for Vercel)
+// Enable trust proxy for Vercel
 app.set('trust proxy', 1);
 
 // Set up middleware
@@ -35,9 +35,9 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-// Health check endpoint
+// Health check endpoint for Vercel
 app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'OK' });
+  res.status(200).json({ status: 'ok' });
 });
 
 // Connect to MongoDB
