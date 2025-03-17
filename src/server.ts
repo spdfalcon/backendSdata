@@ -46,7 +46,7 @@ app.get('/health', (req, res) => {
 
 // Connect to MongoDB
 const MONGODB_URI = "mongodb://root:BM5zVfUagcOV3JLkeP06adXH@olympus.liara.cloud:34731/my-app?authSource=admin";
-mongoose.connect(MONGODB_URI)
+mongoose.connect(MONGODB_URI) 
   .then(() => {
     console.log('Connected to MongoDB');
   })
