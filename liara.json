@@ -1,0 +1,17 @@
+{
+  "platform": "node",
+  "app": "backend-sdata-chat",
+  "port": 3000,
+  "build": {
+    "location": "germany",
+    "commands": [
+      "npm install",
+      "npm run build"
+    ]
+  },
+  "env": {
+    "PORT": "3000",
+    "NODE_ENV": "production",
+    "MONGODB_URI": "mongodb://root:AJDtZPCWYA7Cd29SP3dLM8il@billy.iran.liara.ir:34868/my-app?authSource=admin"
+  }
+}
