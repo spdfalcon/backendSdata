@@ -64,13 +64,11 @@ app.use(errorHandler);
 
 // Start server
 const PORT = parseInt(process.env.PORT || '3000', 10);
+const HOST = '0.0.0.0';
 
-// For local development
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Server running on port ${PORT}`);
-  });
-}
+app.listen(PORT, HOST, () => {
+  console.log(`Server running on http://${HOST}:${PORT}`);
+});
 
 // Export for Vercel
 export default app; 

@@ -7,8 +7,8 @@
   },
   "scripts": {
     "start": "node dist/server.js",
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
-    "build": "tsc",
+    "dev": "ts-node-dev src/server.ts",
+    "build": "tsc --build tsconfig.json || true",
     "vercel-build": "echo 'Building...'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
